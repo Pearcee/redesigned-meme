@@ -5,10 +5,10 @@ const version = formatted_date // '210413.4' //
 const staticCacheName = 'site-static-v' + version;
 const dynamicCacheName = 'site-dynamic-v' + version;
 const assets = [
-  '/index.html',
-  '/js/app.js',
-  '/css/style.min.css',
-  '/img/dish.png',
+  'index.html',
+  'js/app.js',
+  'css/style.min.css',
+  'img/dish.png',
 ];
 
 // install event
@@ -75,7 +75,7 @@ self.addEventListener('fetch', evt => {
         });
       }).catch(() => {
         if(evt.request.url.indexOf('.html') > -1){
-          return caches.match('/pages/fallback.html');
+          return caches.match('pages/fallback.html');
         } 
       })
     );
